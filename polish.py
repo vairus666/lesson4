@@ -1,4 +1,5 @@
 
+
 import operator
 
 OPERATORS = {
@@ -23,17 +24,17 @@ def pol_notation(expr: str) -> str:
     result = []
     stack = []
     for element in expr:
-        if element not in '+-*/':
+        if element not in OPERATORS.keys():
             result.append(element)
         else:
-            last = None if not stack else stack[-1]
+            last = stack[-1] if stack else None
             while priority(last) >= priority(element):
                 result.append(stack.pop())
-                last = None if not stack else stack[-1]
+                last = stack[-1] if stack else None
             stack.append(element)
     for e in reversed(stack):
         result.append(e)
-    return ''.join(result)
+    return result
 
 
 def polsh_math(srt):
@@ -54,3 +55,5 @@ str1 = ['4','+','5','*','10']
 str1 = pol_notation(str1)
 print(str1)
 print(polsh_math(str1))
+
+
