@@ -1,5 +1,5 @@
 
-
+import re
 import operator
 
 OPERATORS = {
@@ -11,7 +11,7 @@ OPERATORS = {
     '^': int.__pow__,
 }
 
-PRIORITY = {1: ['+', '-'], 2: ['*', '/']}
+PRIORITY = {1: ['+', '-'], 2: ['*', '/', '%', '^']}
 
 def priority(value: str) -> int:
     for k, v in PRIORITY.items():
@@ -51,9 +51,10 @@ def polsh_math(srt):
             lst.remove(i)
     return stack.pop()
 
-str1 = ['4','+','5','*','10']
-str1 = pol_notation(str1)
-print(str1)
-print(polsh_math(str1))
-
+# str1 = ['4','+','5','*','10']
+str1 = input('Vvedite simvoli cherez probel\n')
+str2 = re.split(r'\s', str1)
+str2 = pol_notation(str2)
+print(str2)
+print(polsh_math(str2))
 
