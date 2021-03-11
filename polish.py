@@ -1,3 +1,15 @@
+
+import operator
+
+OPERATORS = {
+    '+': int.__add__, 
+    '-': int.__sub__,
+    '*': int.__mul__,
+    '/': int.__truediv__,
+    '%': int.__mod__,
+    '^': int.__pow__,
+}
+
 PRIORITY = {1: ['+', '-'], 2: ['*', '/']}
 
 def priority(value: str) -> int:
@@ -23,16 +35,6 @@ def pol_notation(expr: str) -> str:
         result.append(e)
     return ''.join(result)
 
-import operator
-
-OPERATORS = {
-    '+': int.__add__, 
-    '-': int.__sub__,
-    '*': int.__mul__,
-    '/': int.__truediv__,
-    '%': int.__mod__,
-    '^': int.__pow__,
-}
 
 def polsh_math(srt):
     stack = []
