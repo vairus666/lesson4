@@ -48,7 +48,7 @@ def polsh_math(srt):
             lst.remove(i)
     return stack.pop()
 
-str1 = input('Primer')
+str1 = ['4','+','5','*','10']
 str1 = pol_notation(str1)
 print(str1)
 print(polsh_math(str1))
