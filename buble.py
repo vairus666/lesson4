@@ -1,3 +1,4 @@
+#Сортировка пузырьковым методом
 from random import randint
 
 N = 10

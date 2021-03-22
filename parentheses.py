@@ -1,4 +1,6 @@
+
 def check(string):
+    #Проверка правильности расстановки скобок
     brackets_open = ('(', '[', '{', '<')
     brackets_closed = (')', ']', '}', '>')
     stack = []
